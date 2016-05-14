@@ -1,0 +1,18 @@
+body{
+	background-color:skyblue;
+	font-size:40px; 
+	font-family: 'Homenaje', sans-serif;
+	border:5px solid black;
+	padding: 10px;
+}
+h1{
+	color:blue;
+	font-family: 'Great Vibes', cursive;
+}
+img{
+	position:absolute;
+	right:30px;
+	top:200px;
+	width:350px;
+	height:300px;
+}
