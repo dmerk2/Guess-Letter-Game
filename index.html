@@ -1,21 +1,54 @@
 <DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">	
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">	
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans|Great+Vibes|Homenaje' rel='stylesheet' type='text/css'>
-		<title>Psychic Game</title>	
-	</head>
-	<body>
-			
-		<h1>Guess what letter I am thinking of...</h1>		
-				<hr/>
-			<div id='wins'>Wins:</div>				
-			<div id='Losses'>Losses:</div>				
-			<div id='Guesses Left'>Guesses Left:</div>				
-			<div id= 'Your Guesses so far'>Your Guesses so far:</div>
+	<title>Psychic Game</title>	
+</head>
 
-			<img src='http://granitegrok.com/wp-content/uploads/2013/07/Question-Mark.jpg'/>
+<body>
 			
-	<script src='assets/javascript/game.js'></script>
-	</body>
+	<h1>Guess what letter I am thinking of...</h1>		
+			<hr/>
+		<div id='wins'>Wins:</div>				
+		<div id='Losses'>Losses:</div>				
+		<div id='Guesses Left'>Guesses Left:</div>				
+		<div id= 'Your Guesses so far'>Your Guesses so far:</div>
+
+		<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkGp9srPE114tmOeZ9sRDPZed-TD0nBR6mz6n3P7W2WngLhXM'/>
+			
+<script src='game.js'>
+
+	var compChoices = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+	var wins = 0;
+	var losses = 0;
+	var guessesLeft = 9;
+	var userGuess = '';
+	var compGuess = '';
+		//is this how to start
+document.onkeyup = function(event) {
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+}
+
+		if ((userGuess == '' & (computerGuess == '')){
+			wins++;
+		} else if ((userGuess == '') && (computerGuess == '')){
+			losses++;
+		//start playing?
+			var html
+		// Placing the html into the game ?
+			document.querySelector('#game').innerHTML = html;
+	}
+}
+
+	var html = "<p>Let's Begin</p>" +
+		"<p>wins: " + 
+		wins + 
+		"</p>" +
+		"<p>losses: " + 
+		losses + 
+		"</p>";
+</script>
+</body>
 </html>
