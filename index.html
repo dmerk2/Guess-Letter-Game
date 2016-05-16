@@ -7,43 +7,42 @@
 </head>
 
 <body>
-		<div id='game'>	
-			<h1>Guess what letter I am thinking of...</h1>		
-		</div>
+		
+	<h1>Guess what letter I am thinking of...</h1>		
+		
+	<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkGp9srPE114tmOeZ9sRDPZed-TD0nBR6mz6n3P7W2WngLhXM'/>			
+
 		<div id='wins'>Wins:</div>				
 		<div id='Losses'>Losses:</div>				
-		<div id='Guesses Left'>Guesses Left:</div>				
-		<div id= 'Your Guesses so far'>Your Guesses so far:</div>
+		<div id='Guesses Left'>Guesses Left:</div>	
+		<div id='game'>				
+		<div id= '#game'>Your Guesses so far:</div>
 
-		<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkGp9srPE114tmOeZ9sRDPZed-TD0nBR6mz6n3P7W2WngLhXM'/>
-			
+		
 <script type-'text/javascript'>
 
-	alert('The Computer Has Chosen A Letter')
+	alert('The Computer Has Chosen A Letter');
 	alert('Start Guessing');
 	
 	var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var wins = 0;
 	var losses = 0;
 	var guessesLeft = 9;	
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    var computerGuess = options[Math.floor(Math.random()*options.length)];	
-		//is this how to start
+
 document.onkeyup = function(event) {	
-		// Placing the html into the game ?
-document.querySelector('#game').innerHTML = html;
 		
-
-
-
-
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	var computerGuess = options[Math.floor(Math.random()*options.length)];	
+document.querySelector('#game').innerHTML = userGuess ;
 		
-		//start playing?
-document.write("wins: " + userWin +"<br>");
-document.write("losses: " + compWin + "<br>");
-document.write("guessesLeft " + guessesLeft);
-document.write('guessesSoFar' + guessesLeft);		
-	}
+if (computerGuess == userGuess) {
+	alert("Winner")
+}
+//if (userGuess == )
+//ocument.write("wins: " + userWin);
+//document.write("losses: " + computerWin);
+//document.write("guessesLeft " + guessesLeft);
+//document.write('guessesSoFar' + guessesLeft);		
 }
 </script>
 </body>
