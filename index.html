@@ -14,9 +14,9 @@
 
 		<div id='wins'>Wins:</div>				
 		<div id='Losses'>Losses:</div>				
-		<div id='Guesses Left'>Guesses Left:</div>	
-		<div id='game'>				
-		<div id= '#game'>Your Guesses so far:</div>
+		<div id='guessLeft'>Guesses Left:</div>	
+		<div id='game'>Your Guesses so far:	</div>			
+		
 
 		
 <script type-'text/javascript'>
@@ -33,11 +33,13 @@ document.onkeyup = function(event) {
 		
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	var computerGuess = options[Math.floor(Math.random()*options.length)];	
+
 document.querySelector('#game').innerHTML = userGuess ;
 		
 if (computerGuess == userGuess) {
 	alert("Winner")
 }
+
 //if (userGuess == )
 //ocument.write("wins: " + userWin);
 //document.write("losses: " + computerWin);
