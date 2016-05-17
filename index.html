@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">	
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans|Great+Vibes|Homenaje' rel='stylesheet' type='text/css'>
 	<title>Psychic Game</title>	
@@ -9,8 +10,8 @@
 <body>
 		
 	<h1>Guess what letter I am thinking of...</h1>		
-		
-	<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkGp9srPE114tmOeZ9sRDPZed-TD0nBR6mz6n3P7W2WngLhXM'/>			
+	
+	<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkGp9srPE114tmOeZ9sRDPZed-TD0nBR6mz6n3P7W2WngLhXM'/>		
 
 		<div id='wins'>Wins:</div>				
 		<div id='Losses'>Losses:</div>				
@@ -24,27 +25,27 @@
 	alert('The Computer Has Chosen A Letter');
 	alert('Start Guessing');
 	
+	//this is my array and variables
 	var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var wins = 0;
 	var losses = 0;
-	var guessesLeft = 9;	
+	var guessesLeft = 9;
 
+//captures key clicks
 document.onkeyup = function(event) {	
-		
+	
+	//determines what key was selected and makes it lowercase	
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+	//computer chooses a random letter
 	var computerGuess = options[Math.floor(Math.random()*options.length)];	
 
-document.querySelector('#game').innerHTML = userGuess ;
-		
+document.querySelector('#game').innerHTML = userGuess;
+
+//if user guesses correctly and than there is an alert		
 if (computerGuess == userGuess) {
 	alert("Winner")
-}
-
-//if (userGuess == )
-//ocument.write("wins: " + userWin);
-//document.write("losses: " + computerWin);
-//document.write("guessesLeft " + guessesLeft);
-//document.write('guessesSoFar' + guessesLeft);		
+	}
 }
 </script>
 </body>
