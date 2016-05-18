@@ -8,18 +8,16 @@
 </head>
 
 <body>
-		
-	<h1>Guess what letter I am thinking of...</h1>		
 	
 	<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkGp9srPE114tmOeZ9sRDPZed-TD0nBR6mz6n3P7W2WngLhXM'/>		
 
-		<div id='wins'>Wins:</div>				
-		<div id='Losses'>Losses:</div>				
-		<div id='guessLeft'>Guesses Left:</div>	
+		<div id='wins'>Wins: 				
+		<div id='Losses'>Losses: </div>				
+		<div id='guessLeft'>Guesses Left: </div>	
 		<div id='game'>Your Guesses so far:	</div>			
 		
 
-		
+<!-- linking javascript and HTML -->		
 <script type-'text/javascript'>
 
 	alert('The Computer Has Chosen A Letter');
@@ -32,21 +30,34 @@
 	var guessesLeft = 9;
 
 //captures key clicks
-document.onkeyup = function(event) {	
-	
+document.onkeyup = function(event) {		
 	//determines what key was selected and makes it lowercase	
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-	//computer chooses a random letter
+	//computer chooses a random letter, length of the array
 	var computerGuess = options[Math.floor(Math.random()*options.length)];	
 
-document.querySelector('#game').innerHTML = userGuess;
 
 //if user guesses correctly and than there is an alert		
 if (computerGuess == userGuess) {
 	alert("Winner")
 	}
-}
+}	
+
+var  html = '<h1>Guess what letter I am thinking of...</h1>'+
+	
+		"<body>wins: " +
+		wins ++
+		"</body>" +
+		"<body>losses: " + 
+		losses ++ 
+		"</body>"
+		"<body> guessesLeft: " -1
+		"</body>";
+
+//Placing the HTML in game
+document.querySelector('#game').innerHTML = html;
+
 </script>
 </body>
 </html>
