@@ -14,23 +14,24 @@
 	<!-- picture -->
 	<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkGp9srPE114tmOeZ9sRDPZed-TD0nBR6mz6n3P7W2WngLhXM'/>		
 
-		<div id='wins'>Wins: 				
+		<div id='wins'>Wins: </div>				
 		<div id='losses'>Losses: </div>				
 		<div id='guessLeft'>Guesses Left: </div>	
-		<div id='game'>Your Guesses so far:	</div>	
+		<div>Your Guesses so far:	<span id='game'></span></div>	
 		
 
 <!-- linking javascript and HTML -->		
 <script type-'text/javascript'>
 
 	alert('The Computer Has Chosen A Letter');
-	alert('Start Guessing');
+	alert('See if you can guess what it is');
 	
 	//this is my array and variables
 	var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var wins = 0;
 	var losses = 0;
 	var guessesLeft = 9;
+	var guessSoFar = [];
 
 //captures key clicks
 document.onkeyup = function(event) {		
@@ -41,16 +42,33 @@ document.onkeyup = function(event) {
 	var computerGuess = options[Math.floor(Math.random()*options.length)];	
 
 
-//if user guesses correctly and than there is an alert		
-if (computerGuess == userGuess) {
-	alert("Winner")
-	}
-}	
+	//if user guesses correctly and than there is an alert		
+	if (computerGuess === userGuess) {
+		alert("Winner");
+		wins = wins + 1;
+		console.log('wins = ' + wins);
 
-var  html = 
+	}
+	else {
+		guessesLeft = guessesLeft - 1;
+		console.log('guessesLeft = ' + guessesLeft);
+
+	if (guessesLeft === 0) {
+			alert ('Game Over');
+			losses = losses + 1;
+			console.log('losses = ' + losses);
+			alert ('Try Again?');
+			guessesLeft = 9;
+			guessSoFar = [];
+		}
+	}
+}
+
+//new variable
+var HTML = "";
 
 //Placing the HTML in game
-document.querySelector('#game').innerHTML = HTML
+document.querySelector('#game').innerHTML = HTML;
 
 </script>
 </body>
