@@ -12,9 +12,9 @@
 	<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkGp9srPE114tmOeZ9sRDPZed-TD0nBR6mz6n3P7W2WngLhXM'/>		
 
 		<div id='wins'>Wins: 				
-		<div id='Losses'>Losses: </div>				
+		<div id='losses'>Losses: </div>				
 		<div id='guessLeft'>Guesses Left: </div>	
-		<div id='game'>Your Guesses so far:	</div>			
+		<div id='game'>Your Guesses so far:	</div>	
 		
 
 <!-- linking javascript and HTML -->		
@@ -44,19 +44,10 @@ if (computerGuess == userGuess) {
 	}
 }	
 
-var  html = '<h1>Guess what letter I am thinking of...</h1>'+
-	
-		"<body>wins: " +
-		wins ++
-		"</body>" +
-		"<body>losses: " + 
-		losses ++ 
-		"</body>"
-		"<body> guessesLeft: " -1
-		"</body>";
+var  html = '<h1>Guess what letter I am thinking of...</h1>'
 
 //Placing the HTML in game
-document.querySelector('#game').innerHTML = html;
+document.querySelector('#game').innerHTML = HTML
 
 </script>
 </body>
