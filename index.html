@@ -32,7 +32,7 @@
 	var losses = 0;
 	var guessesLeft = 9;
 	var guessSoFar = [];
-	var userGuess = ('#options')
+	
 	
 //captures key clicks
 document.onkeyup = function(event) {		
@@ -47,23 +47,27 @@ document.onkeyup = function(event) {
 	if (computerGuess === userGuess) {
 		alert("Winner");
 		wins = wins + 1;
-		console.log('wins = ' + wins);
-
+		document.getElementById('wins').innerHTML = wins;
+		
 	}
 	else {
 		guessesLeft = guessesLeft - 1;
 		console.log('guessesLeft = ' + guessesLeft);
 
+
 	if (guessesLeft === 0) {
 			alert ('Game Over');
 			losses = losses + 1;
-			console.log('losses = ' + losses);
+			document.getElementById('losses').innerHTML = losses;
 			alert ('Try Again?');
 			guessesLeft = 9;
 			guessSoFar = [];
+
+
 		}
 	}
 }
+
 
 //new variable???
 var HTML = '';
