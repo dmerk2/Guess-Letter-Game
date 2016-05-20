@@ -53,6 +53,9 @@ document.onkeyup = function(event) {
 	else {
 		guessesLeft = guessesLeft - 1;
 		console.log('guessesLeft = ' + guessesLeft);
+		
+		document.getElementById('guessesLeft').innerHTML = guessesLeft;
+
 
 	//Ends the game after 9 guesses
 	if (guessesLeft === 0) {
@@ -60,7 +63,9 @@ document.onkeyup = function(event) {
 			losses = losses + 1;
 			document.getElementById('losses').innerHTML = losses;
 			alert ('Try Again?');
-			
+	
+
+
 
 			guessesLeft = 9;
 			guessSoFar = [];
