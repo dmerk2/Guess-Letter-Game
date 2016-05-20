@@ -17,14 +17,14 @@
 		<div id='wins'>Wins: </div>				
 		<div id='losses'>Losses: </div>				
 		<div id='guessLeft'>Guesses Left: </div>	
-		<div>Your Guesses so far:	<span id='game'></span></div>	
+		<div> Your Guesses so far:	<span id='game'></span></div>	
 		
 
 <!-- linking javascript and HTML -->		
 <script type-'text/javascript'>
 
 	alert('The Computer Has Chosen A Letter');
-	alert('See if you can guess what it is');
+	alert('See if you can guess what it is!');
 	
 	//this is my array and variables
 	var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -54,26 +54,19 @@ document.onkeyup = function(event) {
 		guessesLeft = guessesLeft - 1;
 		console.log('guessesLeft = ' + guessesLeft);
 
-
+	//Ends the game after 9 guesses
 	if (guessesLeft === 0) {
 			alert ('Game Over');
 			losses = losses + 1;
 			document.getElementById('losses').innerHTML = losses;
 			alert ('Try Again?');
+			
+
 			guessesLeft = 9;
 			guessSoFar = [];
-
-
 		}
 	}
 }
-
-
-//new variable???
-var HTML = '';
-
-//Placing the HTML in game
-document.querySelector('#game').innerHTML = HTML;
 
 </script>
 </body>
