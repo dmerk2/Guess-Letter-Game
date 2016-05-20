@@ -32,7 +32,8 @@
 	var losses = 0;
 	var guessesLeft = 9;
 	var guessSoFar = [];
-
+	var userGuess = ('#options')
+	
 //captures key clicks
 document.onkeyup = function(event) {		
 	//determines what key was selected and makes it lowercase	
@@ -64,8 +65,8 @@ document.onkeyup = function(event) {
 	}
 }
 
-//new variable
-var HTML = "";
+//new variable???
+var HTML = '';
 
 //Placing the HTML in game
 document.querySelector('#game').innerHTML = HTML;
