@@ -30,12 +30,12 @@
 	var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var wins = 0;
 	var losses = 0;
+	var guessSoFar = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var guessesLeft = 9;
-	var guessSoFar = [];
-	
 	
 //captures key clicks
-document.onkeyup = function(event) {		
+document.onkeyup = function(event) {
+		
 	//determines what key was selected and makes it lowercase	
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
@@ -48,27 +48,27 @@ document.onkeyup = function(event) {
 		alert("Winner");
 		wins = wins + 1;
 		document.getElementById('wins').innerHTML = wins;
+		document.getElementById('game').innerHTML = '';
 		
 	}
 	else {
 		guessesLeft = guessesLeft - 1;
 		console.log('guessesLeft = ' + guessesLeft);
-		
 		document.getElementById('guessesLeft').innerHTML = guessesLeft;
-
+		document.getElementById('game').innerHTML += userGuess + ', ';
 
 	//Ends the game after 9 guesses
-	if (guessesLeft === 0) {
+		if (guessesLeft === 0) {
 			alert ('Game Over');
 			losses = losses + 1;
 			document.getElementById('losses').innerHTML = losses;
 			alert ('Try Again?');
 	
-
-
-
+	//Lets empty out the guessesSoFar span so we can restart the game
+			document.getElementById('game').innerHTML = '';
 			guessesLeft = 9;
-			guessSoFar = [];
+			document.getElementById('guessesLeft').innerHTML = guessesLeft;
+
 		}
 	}
 }
