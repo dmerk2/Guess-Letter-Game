@@ -9,6 +9,13 @@
 
 <body>
 	
+	<div class ='active'>	
+	<a href="http://music-trivia-game.herokuapp.com/">Music Trivia</a>
+	<a href="file:///Users/danmerkin/Desktop/Coding/hangman/index.html#">Music Hangman</a>
+	<a href="http://pyschic-game.herokuapp.com/">Psychic Game</a>
+	<a href="http://crystalgame.herokuapp.com/">Crystal Game</a>
+</div>
+	
 	<h1>Guess what letter I am thinking of...</h1>
 
 	<!-- picture -->
@@ -68,8 +75,7 @@ document.onkeyup = function(event) {
 	//Lets empty out the guessesSoFar span so we can restart the game
 			document.getElementById('game').innerHTML = '';
 			guessesLeft = 9;
-			document.getElementById('guessesLeft').innerHTML = guessesLeft;
-
+			restart('game')
 		};
 	};
 };

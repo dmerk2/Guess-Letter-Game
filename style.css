@@ -4,20 +4,19 @@ body{
 	font-family: 'Homenaje', sans-serif;
 	border:5px solid black;
 	padding:5px;
-	
 }
+
 h1{
 	color:blue;
 	font-family: 'Great Vibes', cursive;
 	padding:5px;
-
 }
+
 img{
 	position:absolute;
 	right:30px;
 	top:190px;
 	width:200px;
-	height:200px; 
-	
+	height:200px; 	
 }
 
