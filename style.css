@@ -20,3 +20,14 @@ img{
 	height:200px; 	
 }
 
+.active{
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.active:hover{
+	font-size: 30px;
+}
