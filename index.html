@@ -11,7 +11,7 @@
 	
 <div class ='active'>	
 	<a href="http://music-trivia-game.herokuapp.com/">Music Trivia</a>
-	<a href="file:///Users/danmerkin/Desktop/Coding/hangman/index.html#">Music Hangman</a>
+	<a href="#">Music Hangman</a>
 	<a href="http://pyschic-game.herokuapp.com/">Psychic Game</a>
 	<a href="http://crystalgame.herokuapp.com/">Crystal Game</a>
 </div>
@@ -29,6 +29,8 @@
 
 <!-- linking javascript and HTML -->		
 <script type-'text/javascript'>
+
+document.ready(function){
 
 	alert('The Computer Has Chosen A Letter');
 	alert('See if you can guess what it is!');
@@ -71,6 +73,9 @@ document.onkeyup = function(event) {
 			losses = losses + 1;
 			document.getElementById('losses').innerHTML = losses;
 			alert ('Try Again?');
+
+    $(".refresh_link").click(function(){
+     window.location="http://pyschic-game.herokuapp.com/";
 	
 	//Lets empty out the guessesSoFar span so we can restart the game
 			document.getElementById('game').innerHTML = '';
@@ -81,5 +86,6 @@ document.onkeyup = function(event) {
 };
 
 </script>
+
 </body>
 </html>
