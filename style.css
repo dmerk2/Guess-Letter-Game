@@ -2,7 +2,7 @@ body{
 	background-color:skyblue;
 	font-size:40px; 
 	font-family: 'Homenaje', sans-serif;
-	border:5px solid black;
+	border: 5px solid black;
 	padding:5px;
 }
 
@@ -12,12 +12,12 @@ h1{
 	padding:5px;
 }
 
-img{
-	position:absolute;
-	right:30px;
-	top:190px;
-	width:200px;
-	height:200px; 	
+img{	
+	float: right;
+	border: 2px solid black;
+	border-radius: 40px;
+	margin-right: 230px;
+	margin-top: -70px;
 }
 
 .active{

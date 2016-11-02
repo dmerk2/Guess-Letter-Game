@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +9,6 @@
 </head>
 
 <body>
-	
-<div class ='active'>	
-	<a href="http://music-trivia-game.herokuapp.com/">Music Trivia</a>
-	<a href="file:///Users/danmerkin/Desktop/Coding/hangman/index.html">Music Hangman</a>
-	<a href="http://pyschic-game.herokuapp.com/">Psychic Game</a>
-	<a href="http://crystalgame.herokuapp.com/">Crystal Game</a>
-	<a href='file:///Users/danmerkin/Desktop/Coding/Week-6-hw/index.html'>Music Giphys</a>
-</div>
 	
 	<h1>Guess what letter I am thinking of...</h1>
 
@@ -29,25 +22,22 @@
 		
 
 <!-- linking javascript and HTML -->		
-<script type-'text/javascript'>
+<script type='text/javascript'>
 
-document.ready(function){
-
-	alert('The Computer Has Chosen A Letter');
-	alert('See if you can guess what it is!');
+	alert('The Computer Has Chosen A Letter. See if you can guess what it is!');
 	
 	//this is my array and variables
 	var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var wins = 0;
 	var losses = 0;
-	var guessSoFar = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var guessesLeft = 9;
 	
 //captures key clicks
 document.onkeyup = function(event) {
 		
 	//determines what key was selected and makes it lowercase	
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase(options);
+	//console.log(options);
 
 	//computer chooses a random letter, length of the array
 	var computerGuess = options[Math.floor(Math.random()*options.length)];	
@@ -59,10 +49,8 @@ document.onkeyup = function(event) {
 		wins = wins + 1;
 		document.getElementById('wins').innerHTML = wins;
 		document.getElementById('game').innerHTML = '';
-		document.getElementById('guessesLeft').innerHTML = '0';
-
-	}
-	else {
+		
+	} else {
 		guessesLeft = guessesLeft - 1;
 		console.log('guessesLeft = ' + guessesLeft);
 		document.getElementById('guessesLeft').innerHTML = guessesLeft;
@@ -73,20 +61,16 @@ document.onkeyup = function(event) {
 			alert ('Game Over');
 			losses = losses + 1;
 			document.getElementById('losses').innerHTML = losses;
-			alert ('Try Again?');
-
-    $(".refresh_link").click(function(){
-     window.location="http://pyschic-game.herokuapp.com/";
 	
 	//Lets empty out the guessesSoFar span so we can restart the game
 			document.getElementById('game').innerHTML = '';
 			guessesLeft = 9;
-			restart('game')
-		};
-	};
-};
+			document.getElementById('guessesLeft').innerHTML = guessesLeft;
+
+		}
+	}
+}
 
 </script>
-
 </body>
 </html>
